@@ -3,8 +3,11 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ProductDetail from "../screens/ProductDetail";
 import Home from "../screens/Home";
+import TopTap from "./TopTap";
 
 const Stack = createNativeStackNavigator();
+
+
 const StackNav = () => {
   return (
     <Stack.Navigator screenOptions={{
@@ -13,6 +16,7 @@ const StackNav = () => {
     }}>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="ProductDetail" component={ProductDetail} />
+      <Stack.Screen name="TopTap" component={TopTap} />
     </Stack.Navigator>
   );
 };
