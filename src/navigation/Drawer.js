@@ -8,10 +8,10 @@ const Drawer = createDrawerNavigator();
 
 const MyDrawer = () => {
   return (
-    <Drawer.Navigator >
-    <Drawer.Screen name="BottomTab" component={BottomTab} />
-    <Drawer.Screen name="Article" component={Article} />
-  </Drawer.Navigator>
+    <Drawer.Navigator screenOptions={{ headerShown: false, headerTitleAlign:"center"}}>
+      <Drawer.Screen name="Home" component={BottomTab} options={{headerTitle:"", headerTransparent:true}}/>
+      <Drawer.Screen name="Article" component={Article} />
+    </Drawer.Navigator>
   )
 }
 

@@ -1,30 +1,36 @@
 import { StyleSheet, Text, View, Dimensions, TextInput } from "react-native";
 import React from "react";
 const { width } = Dimensions.get("window");
+
 const SearchBar = ({ onChangeText }) => {
   return (
     <View
       style={{
         height: 55,
-        width: width,
+        width: width, position: "absolute", top: 32, zIndex: 999, elevation:5,
         backgroundColor: "#fff",
-        paddingHorizontal: 16,
-        marginBottom:20
+        paddingHorizontal: 10,
+        flexDirection:"row",
+        justifyContent: "flex-end", alignItems: "center"
       }}
     >
       <TextInput
         placeholder="Search here..."
         onChangeText={onChangeText}
-        placeholderTextColor="#000"
+        placeholderTextColor="grey"
         style={{
-          height: "100%",
-          width: "100%",
-          backgroundColor: "#eee",
-          borderRadius:30,
-          borderColor:"#bbb", borderWidth:1,
-          paddingHorizontal:10
+          height: "70%",
+          width: "88%",
+          borderColor: "#000",
+          backgroundColor:"#eee",
+          color:"#000",
+          borderRadius: 30,
+          borderWidth: 1,
+          paddingHorizontal: 20
         }}
       />
+
+
     </View>
   );
 };

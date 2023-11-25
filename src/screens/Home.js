@@ -21,26 +21,30 @@ const Home = ({ navigation }) => {
 
   console.log("Search Input: >>>>", searchInput);
   return (
-    <View>
+    <View style={{ flex: 1, backgroundColor: "#eee",  }}>
       <SearchBar onChangeText={setSearchInput} />
-      <FlatList
-        data={data}
-        keyExtractor={(item) => item.id.toString()}
-        numColumns={2}
-        contentContainerStyle={{ alignItems: "center" }}
-        renderItem={({ item, index }) => (
-          <ProductCard
-            key={index}
-            img={item?.img}
-            price={item?.price}
-            productName={item?.name}
-            handleAddToCart={handleAddToCart}
-            handleNavigation={() =>
-              navigation.navigate("ProductDetail", { data: item })
-            }
-          />
-        )}
-      />
+
+      <View style={{}}>
+        <FlatList
+          data={data}
+          numColumns={2}
+          keyExtractor={(item) => item.id.toString()}
+          columnWrapperStyle={{ justifyContent: "space-between" }}
+          contentContainerStyle={{ paddingTop:90,paddingBottom:10, paddingHorizontal: 10 }}
+          renderItem={({ item, index }) => (
+            <ProductCard
+              key={index}
+              img={item?.img}
+              price={item?.price}
+              productName={item?.name}
+              handleAddToCart={handleAddToCart}
+              handleNavigation={() =>
+                navigation.navigate("ProductDetail", { data: item })
+              }
+            />
+          )}
+        />
+      </View>
     </View>
   );
 };
@@ -48,12 +52,12 @@ const Home = ({ navigation }) => {
 export default Home;
 
 const styles = StyleSheet.create({
-  // scrollWrpr: {
-  //   backgroundColor: "#eee",
-  //   flexDirection: "row",
-  //   flexWrap: "wrap",
-  //   justifyContent: "center",
-  //   paddingTop: 20,
-  //   paddingBottom: 40,
-  // },
+  scrollWrpr: {
+    backgroundColor: "#eee",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    paddingTop: 20,
+    paddingBottom: 40,
+  },
 });
