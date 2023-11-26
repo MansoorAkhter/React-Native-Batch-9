@@ -7,11 +7,11 @@ const SearchBar = ({ onChangeText }) => {
     <View
       style={{
         height: 55,
-        width: width, position: "absolute", top: 32, zIndex: 999, elevation:5,
+        width: width, elevation:5,
         backgroundColor: "#fff",
         paddingHorizontal: 10,
         flexDirection:"row",
-        justifyContent: "flex-end", alignItems: "center"
+        justifyContent: "center", alignItems: "center"
       }}
     >
       <TextInput
@@ -20,7 +20,7 @@ const SearchBar = ({ onChangeText }) => {
         placeholderTextColor="grey"
         style={{
           height: "70%",
-          width: "88%",
+          width: "90%",
           borderColor: "#000",
           backgroundColor:"#eee",
           color:"#000",

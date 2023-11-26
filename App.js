@@ -1,10 +1,10 @@
 import 'react-native-gesture-handler';
 import { StatusBar } from "expo-status-bar";
-import { View } from "react-native";
+import { Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import MyDrawer from "./src/navigation/Drawer";
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaProvider , SafeAreaView } from 'react-native-safe-area-context';
 
 
 export default function App() {
@@ -18,7 +18,7 @@ export default function App() {
   };
 
   return (
-    <SafeAreaProvider >
+     <SafeAreaProvider style={{height:SafeAreaView.setStatusBarHeight}} forceInset={{ bottom: 'never' }}>
       <StatusBar backgroundColor='#000' style='light' />
       <PaperProvider theme={theme}>
         <NavigationContainer>

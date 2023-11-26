@@ -6,7 +6,8 @@ import { Button, TextInput } from 'react-native-paper'
 const CutsomTextInput = ({ label, onChangeText, icon }) => {
     return (
         <>
-            <TextInput mode="flat" label={label} activeUnderlineColor='purple' onChangeText={onChangeText} right={<TextInput.Icon icon={icon} color={'purple'} />} />
+            <TextInput mode="outlined" label={label} activeUnderlineColor='purple'
+             onChangeText={onChangeText} right={<TextInput.Icon icon={icon} color={'purple'} />} />
         </>
     )
 }

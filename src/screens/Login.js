@@ -1,32 +1,36 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import { KeyboardAvoidingView, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import { Button, TextInput } from 'react-native-paper'
 import CutsomTextInput from '../component/CutsomTextInput'
 
-const Login = () => {
+const Login = ({navigation}) => {
   const [userName, setUsername] = useState('')
   const [passwrod, setPassword] = useState('')
 
   console.log('user name', userName)
   console.log('password', passwrod)
 
-  const loginHandler =  () => console.log('Pressed')
+  const loginHandler = () => console.log('Pressed')
 
   return (
-    <View style={{ flex: 1, backgroundColor: "#fff", justifyContent: "center", alignItems: "center", padding: 30 }}>
-        <View style={{ marginBottom: 70 }}>
-          <Text style={styles.heading}>Happy Coding</Text>
-        </View>
+    <KeyboardAvoidingView style={{ flex: 1, backgroundColor: "#fff", justifyContent: "center", alignItems: "center", padding: 30 }}>
+      <View style={{ marginBottom: 70 }}>
+        <Text style={styles.heading}>Happy Coding</Text>
+      </View>
 
-        <View style={styles.inputs}>
-          <CutsomTextInput label="Username" onChangeText={setUsername} icon={"account"}/>
-          <CutsomTextInput label="Password" onChangeText={setPassword} icon={"key"}/>
-        </View>
+      <View style={styles.inputs}>
+        <CutsomTextInput label="Username" onChangeText={setUsername} icon={"account"} />
+        <CutsomTextInput label="Password" onChangeText={setPassword} icon={"key"} />
+      </View>
 
-        <Button icon="key" mode="contained" buttonColor='purple' uppercase={true} style={{ width: "50%", marginTop: 30 }} onPress={loginHandler}>
-          Login
-        </Button>
-    </View>
+      <Button icon="key" mode="contained" buttonColor='purple' uppercase={true} style={{ width: "50%", marginTop: 30 }} onPress={loginHandler}>
+        Login
+      </Button>
+
+      <Button mode="text"  textColor='#0009' style={{ width: "80%", marginTop: 30, }} onPress={()=>navigation.navigate('Signup')}>
+        Create new account?
+      </Button>
+    </KeyboardAvoidingView>
   )
 }
 

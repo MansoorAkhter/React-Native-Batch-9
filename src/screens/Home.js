@@ -12,6 +12,8 @@ import React, { useState } from "react";
 import { data } from "../../assets/dummyData";
 import ProductCard from "../component/ProductCard";
 import SearchBar from "../component/SearchBar";
+import { AntDesign } from '@expo/vector-icons';
+
 
 const Home = ({ navigation }) => {
   const [searchInput, setSearchInput] = useState("");
@@ -21,8 +23,10 @@ const Home = ({ navigation }) => {
 
   console.log("Search Input: >>>>", searchInput);
   return (
-    <View style={{ flex: 1, backgroundColor: "#eee",  }}>
-      <SearchBar onChangeText={setSearchInput} />
+    <View style={{ flex: 1, backgroundColor: "#eee", }}>
+      <View style={{ zIndex: 999, marginTop: 25 }}>
+        <SearchBar onChangeText={setSearchInput} />
+      </View>
 
       <View style={{}}>
         <FlatList
@@ -30,7 +34,7 @@ const Home = ({ navigation }) => {
           numColumns={2}
           keyExtractor={(item) => item.id.toString()}
           columnWrapperStyle={{ justifyContent: "space-between" }}
-          contentContainerStyle={{ paddingTop:90,paddingBottom:10, paddingHorizontal: 10 }}
+          contentContainerStyle={{ paddingTop: 10, paddingBottom: 90, paddingHorizontal: 10 }}
           renderItem={({ item, index }) => (
             <ProductCard
               key={index}

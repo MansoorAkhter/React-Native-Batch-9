@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Button, TextInput } from 'react-native-paper'
 import CutsomTextInput from '../component/CutsomTextInput'
 
-const Signup = () => {
+const Signup = ({navigation}) => {
   const [userName, setUsername] = useState('')
   const [passwrod, setPassword] = useState('')
   const [email, setEmail] = useState('')
@@ -27,6 +27,10 @@ const Signup = () => {
 
       <Button icon="" mode="contained" buttonColor='purple' uppercase={true} style={{ width: "50%", marginTop: 50 }} onPress={signupHandler}>
         signup
+      </Button>
+
+      <Button textColor='#0009' style={{ width: "80%", marginTop: 30, }} onPress={()=>navigation.navigate('Login')}>
+        Already have an account?
       </Button>
     </View>
   )
