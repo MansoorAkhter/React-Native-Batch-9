@@ -4,7 +4,8 @@ import { Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import MyDrawer from "./src/navigation/Drawer";
-import { SafeAreaProvider , SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 
 export default function App() {
@@ -18,13 +19,15 @@ export default function App() {
   };
 
   return (
-     <SafeAreaProvider style={{height:SafeAreaView.setStatusBarHeight}} forceInset={{ bottom: 'never' }}>
-      <StatusBar backgroundColor='#000' style='light' />
-      <PaperProvider theme={theme}>
-        <NavigationContainer>
-          <MyDrawer />
-        </NavigationContainer>
-      </PaperProvider>
+    <SafeAreaProvider style={{ height: SafeAreaView.setStatusBarHeight }} forceInset={{ bottom: 'never' }}>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <StatusBar backgroundColor='#000' style='light' />
+        <PaperProvider theme={theme}>
+          <NavigationContainer>
+            <MyDrawer />
+          </NavigationContainer>
+        </PaperProvider>
+      </GestureHandlerRootView>
     </SafeAreaProvider>
   );
 }

@@ -23,6 +23,6 @@ const StackNav = () => {
       <Stack.Screen name="TopTap" component={TopTap} />
     </Stack.Navigator>
   );
-};
+};  
 
 export default StackNav;
