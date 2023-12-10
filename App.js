@@ -19,7 +19,9 @@ export default function App() {
   };
 
   return (
-    <SafeAreaProvider style={{ height: SafeAreaView.setStatusBarHeight }} forceInset={{ bottom: 'never' }}>
+    // <SafeAreaProvider style={{ height: SafeAreaView.setStatusBarHeight }} forceInset={{ bottom: 'never' }}>
+    <SafeAreaView style={{flex:1}}>
+
       <GestureHandlerRootView style={{ flex: 1 }}>
         <StatusBar backgroundColor='#000' style='light' />
         <PaperProvider theme={theme}>
@@ -28,6 +30,7 @@ export default function App() {
           </NavigationContainer>
         </PaperProvider>
       </GestureHandlerRootView>
-    </SafeAreaProvider>
+    </SafeAreaView>
+    // </SafeAreaProvider>
   );
 }

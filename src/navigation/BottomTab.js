@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import StackNav from './Stack';
+import StackNav from './StackNav';
 import Categories from '../screens/Categories';
 import MyDrawer from './Drawer';
 import Article from '../screens/Article';

@@ -1,9 +1,9 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import BottomTab from './BottomTab';
 import Article from '../screens/Article';
 import Login from '../screens/Login';
+import BottomTab from './BottomTab';
 const Drawer = createDrawerNavigator();
 
 const MyDrawer = () => {

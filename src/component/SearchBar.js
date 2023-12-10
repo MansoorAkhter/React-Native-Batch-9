@@ -11,7 +11,7 @@ const SearchBar = ({ onChangeText }) => {
         backgroundColor: "#fff",
         paddingHorizontal: 10,
         flexDirection:"row",
-        justifyContent: "center", alignItems: "center"
+        justifyContent: "flex-end", alignItems: "center"
       }}
     >
       <TextInput
